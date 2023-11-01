@@ -1,1 +1,23 @@
-<router-outlet></router-outlet>
+<main style="display:flex; flex-direction:column; height: 100vh">
+    <mat-toolbar>
+        <button mat-icon-button (click)="drawer.toggle()" class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+        </button>
+        <span>My App</span>
+    </mat-toolbar>
+
+    <mat-drawer-container class="mat-drawer-content" style="background-color: red;" autosize>
+        <mat-drawer #drawer class="example-sidenav" mode="side">
+        <p>Auto-resizing sidenav</p>
+        <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+        <button (click)="showFiller = !showFiller" mat-raised-button>
+            Toggle extra text
+        </button>
+        </mat-drawer>
+    
+        <div style="height: 100%;">
+        <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-container>
+</main>
+

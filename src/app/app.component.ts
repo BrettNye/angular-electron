@@ -9,6 +9,7 @@ import { APP_CONFIG } from '../environments/environment';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  showFiller = false;
   constructor(
     private electronService: ElectronService,
     private translate: TranslateService
